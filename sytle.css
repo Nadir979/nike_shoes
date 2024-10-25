@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+    /* color: #fff; */
+}
+
+:root{
+    --primary: #1dc5a4;
+    --bg: radial-gradient(142% 91% at 83% 7%, #041313ff 1%, #ff000000 99%),
+          radial-gradient(142% 91% at 152% 84%, #1b4e3eff 0%, #070415ff 100%);
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 4rem;
+    overflow: hidden;
+    background: var(--bg);
+}
+
+nav{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    line-height: 100px;
+    z-index: 1;
+}
+
+#logo{
+    height: 100%;
+}
+
+#logo img{
+    /* margin-top: 5px; */
+    height: inherit;
+    filter: invert(1);
+}
+
+ul{
+    display: flex;
+}
+
+ul li{
+    list-style: none;
+    margin: 0 20px;
+}
+
+ul li a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    text-wrap: nowrap;
+}
+
+ul li:hover a,
+.buying i:hover{
+    color: var(--primary);
+}
+
+.buying{
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.buying i{
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.wrapper{
+    position: relative;
+    height: inherit;
+    width: 100%;
+    display: flex;
+    padding: 1em;
+}
+
+.wrapper .cols{
+    width: 50%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.wrapper .cols .title{
+    font-size: 4.5rem;
+    font-weight: 750;
+    color: #fff;
+    text-wrap: nowrap;
+}
+
+.wrapper .cols .label{
+    color: var(--primary);
+    font-size: 2em;
+    font-weight: 600;
+    font-family: 'Ubuntu';
+}
+
+.wrapper .cols .desc{
+    margin-top: 0.5em;
+    font-size: 1em;
+    max-width: 35vw;
+    color: #fff;
+}
+
+.price{
+    position: relative;
+    margin-top: 1.5em;
+}
+
+.price span{
+    display: block;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.price button{
+    background: #fff;
+    color: var(--primary);
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    padding: 0.8em 1.2em;
+    font-size: 1em;
+}
+
+.price button i{
+    color: var(--primary);
+}
+
+.price button:hover,
+.price button:hover i{
+   color: #fff;
+   background: var(--primary);
+   cursor: pointer; 
+}
+
+.btn{
+    margin-left: 1em;
+}
+
+.imagebox{
+    position: relative;
+    height: 100%;
+    width: 90%;
+    top: -80px;
+    left: -40px;
+    z-index: 1;
+}
+
+.imagebox img{
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+    /* mix-blend-mode: multiply; */
+    scale: 0;
+    filter: drop-shadow(0 20px 25px rgba(0,0,0,0.6));
+    transform: translate(0,0) scale(1.22) rotate(-20deg);
+    transition: 0.3s ease-in;
+    animation: animateShoes 4s ease-in infinite;
+}
+@keyframes animateShoes{
+    50%{
+        transform: translate(20px,-20px) scale(1.15) rotate(-25deg);
+    }
+}
+
+.image-cols{
+    position: relative;
+    z-index: 0;
+    width: 90%;
+}
+
+.image-cols .element{
+    position: absolute;
+    background: url(180-1807872_nike-just-do.png);
+    background-size: cover;
+    height: inherit;
+    width: 30em;
+    scale: 1.2;
+    filter: invert(1);
+    opacity: 0.3;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.thumbnails{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 4%;
+    right: 7%;
+}
+
+.thumbnails span{
+    position: relative;
+    width: 190px;
+    height: 150px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.thumbnails span:hover{
+    scale: 1.1;
+    filter: drop-shadow(0 0 10px rgba(254, 254, 254, 0.4));
+}
+
+.thumbnails span img{
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+    /* mix-blend-mode: multiply; */
+}
+
+.sociallinks{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 5%;
+    bottom: 20%;
+}
+
+.sociallinks i{
+    color: #fff;
+    font-size: 2em;
+    margin: 0.4em 0;
+    opacity: 0.8;
+}
+
+.sociallinks i:hover{
+    color: var(--primary);
+    cursor: pointer;
+    scale: 1.2;
+    transition: 0.2s ease;
+}
+
+.imagebox .image.active{
+    scale: 1;
+}
+
+.activeRoot{
+    --primary: #1dc5a4;
+    --bg: radial-gradient(142% 91% at 83% 7%, #041313ff 1%, #ff000000 99%),
+          radial-gradient(142% 91% at 152% 84%, #1b4e3eff 0%, #070415ff 100%);
+}
+
+.activeRoot1{
+    --primary: #f1a92c;
+    --bg: radial-gradient(142% 91% at 83% 7%, rgba(19, 12, 4) 1%, #ff910000 99%),
+          radial-gradient(142% 91% at 152% 84%, rgba(78, 65, 27) 0%, rgba(21, 17, 4) 100%);
+}
+
+.activeRoot2{
+    --primary: #fe5b2e;
+    --bg: radial-gradient(142% 91% at 83% 7%, rgba(19, 4, 4) 1%, #ff000000 99%),
+          radial-gradient(142% 91% at 152% 84%, rgba(78, 28, 27) 0%, rgba(21, 4, 4) 100%);
+}
